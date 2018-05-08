@@ -1,0 +1,31 @@
+<div class="container">
+
+  <form [formGroup]="formGroup" (ngSubmit)="enviar()">
+
+    <div>
+      <label>Nome</label>
+      <input formGroupName="nome" type="text" />
+      <p *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors">Valor Inválido</p>
+    </div>
+    <div>
+      <label>Endereço</label>
+      <input formGroupName="endereco" type="text" />
+      <p *ngIf="formGroup.controls.endereco.dirty && formGroup.controls.endereco.errors">Valor Inválido</p>
+    </div>
+    <div>
+      <label>Email</label>
+      <input formGroupName="email" type="text" />
+      <p *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors">Valor Inválido</p>
+    </div>
+    <div>
+      <label>Senha</label>
+      <input formGroupName="senha" type="text" />
+      <p *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors">Valor Inválido</p>
+    </div>
+    <div>
+      <button type="submit" [disabled]="formGroup.invalid">ENVIAR</button>
+    </div>
+  </form>
+
+
+</div>
